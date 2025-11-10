@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		582F52732EBBAB12002F6182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582F52722EBBAB12002F6182 /* Assets.xcassets */; };
+		582F52762EBBAB12002F6182 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582F52752EBBAB12002F6182 /* Preview Assets.xcassets */; };
+		582F52842EBBAC18002F6182 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52832EBBAC18002F6182 /* Stroke.swift */; };
+		582F52862EBBAC38002F6182 /* WhiteboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52852EBBAC38002F6182 /* WhiteboardInteractor.swift */; };
+		582F52882EBBAC59002F6182 /* WhiteboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52872EBBAC59002F6182 /* WhiteboardPresenter.swift */; };
+		582F528A2EBBAC7A002F6182 /* WhiteboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52892EBBAC7A002F6182 /* WhiteboardRouter.swift */; };
+		582F528C2EBBAC9A002F6182 /* WhiteboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F528B2EBBAC9A002F6182 /* WhiteboardView.swift */; };
+		582F528E2EBBADA3002F6182 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F528D2EBBADA3002F6182 /* MainApp.swift */; };
+		582F52912EBE12D7002F6182 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52902EBE12D7002F6182 /* Color+Hex.swift */; };
+		582F52952EBE2CD7002F6182 /* MovableToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52942EBE2CD7002F6182 /* MovableToolbar.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		582F526B2EBBAB08002F6182 /* VIPERWhiteboardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERWhiteboardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		582F52722EBBAB12002F6182 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		582F52752EBBAB12002F6182 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		582F52832EBBAC18002F6182 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
+		582F52852EBBAC38002F6182 /* WhiteboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteboardInteractor.swift; sourceTree = "<group>"; };
+		582F52872EBBAC59002F6182 /* WhiteboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteboardPresenter.swift; sourceTree = "<group>"; };
+		582F52892EBBAC7A002F6182 /* WhiteboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteboardRouter.swift; sourceTree = "<group>"; };
+		582F528B2EBBAC9A002F6182 /* WhiteboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteboardView.swift; sourceTree = "<group>"; };
+		582F528D2EBBADA3002F6182 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
+		582F52902EBE12D7002F6182 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		582F52942EBE2CD7002F6182 /* MovableToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableToolbar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		582F52682EBBAB08002F6182 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		582F52622EBBAB08002F6182 = {
+			isa = PBXGroup;
+			children = (
+				582F526D2EBBAB08002F6182 /* VIPERWhiteboardApp */,
+				582F526C2EBBAB08002F6182 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		582F526C2EBBAB08002F6182 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				582F526B2EBBAB08002F6182 /* VIPERWhiteboardApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		582F526D2EBBAB08002F6182 /* VIPERWhiteboardApp */ = {
+			isa = PBXGroup;
+			children = (
+				582F52822EBBABC1002F6182 /* View */,
+				582F52812EBBABB2002F6182 /* Router */,
+				582F52802EBBABA5002F6182 /* Presenter */,
+				582F527F2EBBAB8F002F6182 /* Interactor */,
+				582F527E2EBBAB77002F6182 /* Entity */,
+				582F527C2EBBAB2B002F6182 /* App */,
+				582F52722EBBAB12002F6182 /* Assets.xcassets */,
+				582F52742EBBAB12002F6182 /* Preview Content */,
+			);
+			path = VIPERWhiteboardApp;
+			sourceTree = "<group>";
+		};
+		582F52742EBBAB12002F6182 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				582F52752EBBAB12002F6182 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		582F527C2EBBAB2B002F6182 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				582F528D2EBBADA3002F6182 /* MainApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		582F527E2EBBAB77002F6182 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				582F52832EBBAC18002F6182 /* Stroke.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		582F527F2EBBAB8F002F6182 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				582F52852EBBAC38002F6182 /* WhiteboardInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		582F52802EBBABA5002F6182 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				582F52872EBBAC59002F6182 /* WhiteboardPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		582F52812EBBABB2002F6182 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				582F52892EBBAC7A002F6182 /* WhiteboardRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		582F52822EBBABC1002F6182 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				582F52962EBE3DE2002F6182 /* Extensions */,
+				582F528B2EBBAC9A002F6182 /* WhiteboardView.swift */,
+				582F52942EBE2CD7002F6182 /* MovableToolbar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		582F52962EBE3DE2002F6182 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				582F52902EBE12D7002F6182 /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		582F526A2EBBAB08002F6182 /* VIPERWhiteboardApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 582F52792EBBAB12002F6182 /* Build configuration list for PBXNativeTarget "VIPERWhiteboardApp" */;
+			buildPhases = (
+				582F52672EBBAB08002F6182 /* Sources */,
+				582F52682EBBAB08002F6182 /* Frameworks */,
+				582F52692EBBAB08002F6182 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VIPERWhiteboardApp;
+			productName = VIPERWhiteboardApp;
+			productReference = 582F526B2EBBAB08002F6182 /* VIPERWhiteboardApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		582F52632EBBAB08002F6182 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					582F526A2EBBAB08002F6182 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 582F52662EBBAB08002F6182 /* Build configuration list for PBXProject "VIPERWhiteboardApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 582F52622EBBAB08002F6182;
+			productRefGroup = 582F526C2EBBAB08002F6182 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				582F526A2EBBAB08002F6182 /* VIPERWhiteboardApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		582F52692EBBAB08002F6182 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				582F52762EBBAB12002F6182 /* Preview Assets.xcassets in Resources */,
+				582F52732EBBAB12002F6182 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		582F52672EBBAB08002F6182 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				582F52952EBE2CD7002F6182 /* MovableToolbar.swift in Sources */,
+				582F52912EBE12D7002F6182 /* Color+Hex.swift in Sources */,
+				582F52882EBBAC59002F6182 /* WhiteboardPresenter.swift in Sources */,
+				582F52862EBBAC38002F6182 /* WhiteboardInteractor.swift in Sources */,
+				582F52842EBBAC18002F6182 /* Stroke.swift in Sources */,
+				582F528A2EBBAC7A002F6182 /* WhiteboardRouter.swift in Sources */,
+				582F528E2EBBADA3002F6182 /* MainApp.swift in Sources */,
+				582F528C2EBBAC9A002F6182 /* WhiteboardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		582F52772EBBAB12002F6182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		582F52782EBBAB12002F6182 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		582F527A2EBBAB12002F6182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VIPERWhiteboardApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghouseazam.VIPERWhiteboardApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		582F527B2EBBAB12002F6182 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VIPERWhiteboardApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghouseazam.VIPERWhiteboardApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		582F52662EBBAB08002F6182 /* Build configuration list for PBXProject "VIPERWhiteboardApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				582F52772EBBAB12002F6182 /* Debug */,
+				582F52782EBBAB12002F6182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		582F52792EBBAB12002F6182 /* Build configuration list for PBXNativeTarget "VIPERWhiteboardApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				582F527A2EBBAB12002F6182 /* Debug */,
+				582F527B2EBBAB12002F6182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 582F52632EBBAB08002F6182 /* Project object */;
+}
