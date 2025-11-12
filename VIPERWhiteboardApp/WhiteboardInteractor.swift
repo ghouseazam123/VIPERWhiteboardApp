@@ -7,7 +7,14 @@
 
 // WhiteboardInteractor.swift
 // WhiteboardInteractor.swift
+
 import Foundation
+
+protocol WhiteboardInteractorInput: AnyObject {
+    func saveStrokes(_ strokes: [Stroke])
+    func loadSavedStrokes() -> [Stroke]
+    func clearAllStrokes()
+}
 
 final class WhiteboardInteractor: WhiteboardInteractorInput {
     private let storageKey = "com.company.viper.whiteboard.strokes"
@@ -36,11 +43,9 @@ final class WhiteboardInteractor: WhiteboardInteractorInput {
     }
 }
 
-protocol WhiteboardInteractorInput: AnyObject {
-    func saveStrokes(_ strokes: [Stroke])
-    func loadSavedStrokes() -> [Stroke]
-    func clearAllStrokes()
-}
+
+
+
 
 
 

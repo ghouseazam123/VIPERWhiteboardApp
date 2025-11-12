@@ -3,12 +3,9 @@
 //  VIPERWhiteboardApp
 //
 //  Created by next on 05/11/25.
-//
-
-// WhiteboardPresenter.swift
 import Foundation
-import Combine
 import SwiftUI
+import Combine
 
 enum DrawingTool {
     case pencil
@@ -21,8 +18,10 @@ final class WhiteboardPresenter: ObservableObject {
     @Published var selectedColor: String = "000000"
     @Published var selectedTool: DrawingTool = .pencil
     @Published var lineWidth: CGFloat = 3
+    @Published var strokeOpacity: Double = 1.0
 
-    private let interactor: WhiteboardInteractorInput
+    private var undoneStrokes: [Stroke] = []
+    let interactor: WhiteboardInteractorInput
     private let router: WhiteboardRouter
 
     init(interactor: WhiteboardInteractorInput, router: WhiteboardRouter) {
@@ -31,56 +30,97 @@ final class WhiteboardPresenter: ObservableObject {
         self.strokes = interactor.loadSavedStrokes()
     }
 
+    // MARK: - Drawing Logic
     func startStroke(at location: CGPoint) {
-        // Ensure the correct color is used for the moment the stroke begins
         let colorHex = (selectedTool == .eraser) ? "FFFFFF" : selectedColor
         currentStroke = Stroke(points: [StrokePoint(x: location.x, y: location.y)],
                                colorHex: colorHex,
-                               lineWidth: lineWidth)
+                               lineWidth: lineWidth,
+                               opacity: strokeOpacity)
     }
 
     func continueStroke(at location: CGPoint) {
-        // guard against accidental zero points
         currentStroke.points.append(StrokePoint(x: location.x, y: location.y))
-        // trigger an update by assigning (not necessary with @Published but safe)
         objectWillChange.send()
     }
 
     func endStroke() {
-        // only append if there are points
-        guard !currentStroke.points.isEmpty else { currentStroke = Stroke(); return }
+        guard !currentStroke.points.isEmpty else {
+            currentStroke = Stroke()
+            return
+        }
         strokes.append(currentStroke)
         interactor.saveStrokes(strokes)
         currentStroke = Stroke()
     }
 
+    // MARK: - Toolbar Actions
     func clearCanvas() {
         interactor.clearAllStrokes()
         strokes = []
+        undoneStrokes = []
     }
 
     func setTool(_ tool: DrawingTool) {
         selectedTool = tool
         if tool == .eraser {
             lineWidth = 15
-            // ensure the color used for new strokes is white while erasing
             selectedColor = "FFFFFF"
         } else {
             lineWidth = 3
-            // keep the currently selected color or fall back to black
-            if selectedColor.uppercased() == "FFFFFF" { selectedColor = "000000" }
+            if selectedColor.uppercased() == "FFFFFF" {
+                selectedColor = "000000"
+            }
         }
     }
 
     func setColor(_ color: String) {
-        // setting color should switch to pencil automatically
         selectedColor = color
         if selectedTool == .eraser {
             selectedTool = .pencil
             lineWidth = 3
         }
     }
+
+    // MARK: - Navigation
+    func goToReferenceView() -> AnyView {
+        return router.navigateToReferenceView()
+    }
+
+    // MARK: - Undo / Redo
+    func undoLastStroke() {
+        guard !strokes.isEmpty else { return }
+        let last = strokes.removeLast()
+        undoneStrokes.append(last)
+    }
+
+    func redoLastStroke() {
+        guard !undoneStrokes.isEmpty else { return }
+        let redoStroke = undoneStrokes.removeLast()
+        strokes.append(redoStroke)
+    }
+
+    var canUndo: Bool { !strokes.isEmpty }
+    var canRedo: Bool { !undoneStrokes.isEmpty }
+
+    // MARK: - Alert Helpers
+    func confirmClearCanvas() -> String {
+        "Are you sure you want to clear the canvas? This action cannot be undone."
+    }
+
+    func saveConfirmationMessage() -> String {
+        "Canvas saved successfully!"
+    }
+
+    func saveCanvas() {
+        interactor.saveStrokes(strokes)
+        print("✅ Canvas saved")
+    }
 }
+
+
+
+
 
 
 

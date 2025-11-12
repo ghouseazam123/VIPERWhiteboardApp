@@ -17,6 +17,8 @@
 		582F528E2EBBADA3002F6182 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F528D2EBBADA3002F6182 /* MainApp.swift */; };
 		582F52912EBE12D7002F6182 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52902EBE12D7002F6182 /* Color+Hex.swift */; };
 		582F52952EBE2CD7002F6182 /* MovableToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52942EBE2CD7002F6182 /* MovableToolbar.swift */; };
+		58C107D82EC234330000406B /* ReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C107D72EC234330000406B /* ReferenceView.swift */; };
+		58C107DA2EC23D700000406B /* NetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C107D92EC23D700000406B /* NetworkManage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		582F528D2EBBADA3002F6182 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		582F52902EBE12D7002F6182 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		582F52942EBE2CD7002F6182 /* MovableToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableToolbar.swift; sourceTree = "<group>"; };
+		58C107D72EC234330000406B /* ReferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceView.swift; sourceTree = "<group>"; };
+		58C107D92EC23D700000406B /* NetworkManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 		582F52622EBBAB08002F6182 = {
 			isa = PBXGroup;
 			children = (
+				582F528D2EBBADA3002F6182 /* MainApp.swift */,
 				582F526D2EBBAB08002F6182 /* VIPERWhiteboardApp */,
 				582F526C2EBBAB08002F6182 /* Products */,
 			);
@@ -63,12 +68,15 @@
 		582F526D2EBBAB08002F6182 /* VIPERWhiteboardApp */ = {
 			isa = PBXGroup;
 			children = (
-				582F52822EBBABC1002F6182 /* View */,
-				582F52812EBBABB2002F6182 /* Router */,
-				582F52802EBBABA5002F6182 /* Presenter */,
-				582F527F2EBBAB8F002F6182 /* Interactor */,
-				582F527E2EBBAB77002F6182 /* Entity */,
-				582F527C2EBBAB2B002F6182 /* App */,
+				582F52902EBE12D7002F6182 /* Color+Hex.swift */,
+				582F528B2EBBAC9A002F6182 /* WhiteboardView.swift */,
+				582F52892EBBAC7A002F6182 /* WhiteboardRouter.swift */,
+				582F52872EBBAC59002F6182 /* WhiteboardPresenter.swift */,
+				582F52852EBBAC38002F6182 /* WhiteboardInteractor.swift */,
+				58C107D72EC234330000406B /* ReferenceView.swift */,
+				582F52942EBE2CD7002F6182 /* MovableToolbar.swift */,
+				58C107D92EC23D700000406B /* NetworkManage.swift */,
+				582F52832EBBAC18002F6182 /* Stroke.swift */,
 				582F52722EBBAB12002F6182 /* Assets.xcassets */,
 				582F52742EBBAB12002F6182 /* Preview Content */,
 			);
@@ -81,64 +89,6 @@
 				582F52752EBBAB12002F6182 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		582F527C2EBBAB2B002F6182 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				582F528D2EBBADA3002F6182 /* MainApp.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		582F527E2EBBAB77002F6182 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				582F52832EBBAC18002F6182 /* Stroke.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		582F527F2EBBAB8F002F6182 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				582F52852EBBAC38002F6182 /* WhiteboardInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		582F52802EBBABA5002F6182 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				582F52872EBBAC59002F6182 /* WhiteboardPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		582F52812EBBABB2002F6182 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				582F52892EBBAC7A002F6182 /* WhiteboardRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		582F52822EBBABC1002F6182 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				582F52962EBE3DE2002F6182 /* Extensions */,
-				582F528B2EBBAC9A002F6182 /* WhiteboardView.swift */,
-				582F52942EBE2CD7002F6182 /* MovableToolbar.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		582F52962EBE3DE2002F6182 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				582F52902EBE12D7002F6182 /* Color+Hex.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				582F52952EBE2CD7002F6182 /* MovableToolbar.swift in Sources */,
+				58C107DA2EC23D700000406B /* NetworkManage.swift in Sources */,
+				58C107D82EC234330000406B /* ReferenceView.swift in Sources */,
 				582F52912EBE12D7002F6182 /* Color+Hex.swift in Sources */,
 				582F52882EBBAC59002F6182 /* WhiteboardPresenter.swift in Sources */,
 				582F52862EBBAC38002F6182 /* WhiteboardInteractor.swift in Sources */,
