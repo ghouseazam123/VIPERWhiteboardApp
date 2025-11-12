@@ -5,8 +5,7 @@
 //  Created by next on 05/11/25.
 //
 
-// WhiteboardInteractor.swift
-// WhiteboardInteractor.swift
+
 
 import Foundation
 

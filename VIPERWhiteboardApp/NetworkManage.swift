@@ -5,7 +5,7 @@
 //  Created by next on 10/11/25.
 //
 
-import Foundation
+
 import Foundation
 
 final class NetworkManager {
