@@ -85,7 +85,7 @@ User can manually save or clear the canvas anytime.
 
 <p align="center" style="margin:0; padding:0;">
   <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 50 14"
-       src="https://github.com/user-attachments/assets/b140aa6e-84a1-4b4a-949a-ec68420069e3"/>
+       src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-12 at 13.12.19.png"/>
   <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 49 04"
        src="https://github.com/user-attachments/assets/ec638393-0c77-4581-9cf9-4a6f312b5007"/>
 </p>
