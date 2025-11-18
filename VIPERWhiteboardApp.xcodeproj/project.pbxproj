@@ -19,6 +19,10 @@
 		582F52952EBE2CD7002F6182 /* MovableToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F52942EBE2CD7002F6182 /* MovableToolbar.swift */; };
 		58C107D82EC234330000406B /* ReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C107D72EC234330000406B /* ReferenceView.swift */; };
 		58C107DA2EC23D700000406B /* NetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C107D92EC23D700000406B /* NetworkManage.swift */; };
+		58C27C412EC4D14C0029AAE9 /* ReferenceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C27C402EC4D14C0029AAE9 /* ReferenceImage.swift */; };
+		58C27C432EC4D15F0029AAE9 /* ReferenceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C27C422EC4D15F0029AAE9 /* ReferenceInteractor.swift */; };
+		58C27C452EC4D16F0029AAE9 /* ReferencePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C27C442EC4D16F0029AAE9 /* ReferencePresenter.swift */; };
+		58C27C472EC4D17E0029AAE9 /* ReferenceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C27C462EC4D17E0029AAE9 /* ReferenceRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		582F52942EBE2CD7002F6182 /* MovableToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableToolbar.swift; sourceTree = "<group>"; };
 		58C107D72EC234330000406B /* ReferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceView.swift; sourceTree = "<group>"; };
 		58C107D92EC23D700000406B /* NetworkManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManage.swift; sourceTree = "<group>"; };
+		58C27C402EC4D14C0029AAE9 /* ReferenceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceImage.swift; sourceTree = "<group>"; };
+		58C27C422EC4D15F0029AAE9 /* ReferenceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceInteractor.swift; sourceTree = "<group>"; };
+		58C27C442EC4D16F0029AAE9 /* ReferencePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencePresenter.swift; sourceTree = "<group>"; };
+		58C27C462EC4D17E0029AAE9 /* ReferenceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +59,6 @@
 		582F52622EBBAB08002F6182 = {
 			isa = PBXGroup;
 			children = (
-				582F528D2EBBADA3002F6182 /* MainApp.swift */,
 				582F526D2EBBAB08002F6182 /* VIPERWhiteboardApp */,
 				582F526C2EBBAB08002F6182 /* Products */,
 			);
@@ -68,15 +75,8 @@
 		582F526D2EBBAB08002F6182 /* VIPERWhiteboardApp */ = {
 			isa = PBXGroup;
 			children = (
-				582F52902EBE12D7002F6182 /* Color+Hex.swift */,
-				582F528B2EBBAC9A002F6182 /* WhiteboardView.swift */,
-				582F52892EBBAC7A002F6182 /* WhiteboardRouter.swift */,
-				582F52872EBBAC59002F6182 /* WhiteboardPresenter.swift */,
-				582F52852EBBAC38002F6182 /* WhiteboardInteractor.swift */,
-				58C107D72EC234330000406B /* ReferenceView.swift */,
-				582F52942EBE2CD7002F6182 /* MovableToolbar.swift */,
-				58C107D92EC23D700000406B /* NetworkManage.swift */,
-				582F52832EBBAC18002F6182 /* Stroke.swift */,
+				582F528D2EBBADA3002F6182 /* MainApp.swift */,
+				58C27C3D2EC4D0770029AAE9 /* Modules */,
 				582F52722EBBAB12002F6182 /* Assets.xcassets */,
 				582F52742EBBAB12002F6182 /* Preview Content */,
 			);
@@ -89,6 +89,58 @@
 				582F52752EBBAB12002F6182 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		58C27C3D2EC4D0770029AAE9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				58C27C4C2EC4D28B0029AAE9 /* Extensions */,
+				58C27C4B2EC4D1E00029AAE9 /* Network */,
+				58C27C3F2EC4D0FC0029AAE9 /* Reference */,
+				58C27C3E2EC4D08D0029AAE9 /* Whiteboard */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		58C27C3E2EC4D08D0029AAE9 /* Whiteboard */ = {
+			isa = PBXGroup;
+			children = (
+				582F52942EBE2CD7002F6182 /* MovableToolbar.swift */,
+				582F528B2EBBAC9A002F6182 /* WhiteboardView.swift */,
+				582F52892EBBAC7A002F6182 /* WhiteboardRouter.swift */,
+				582F52872EBBAC59002F6182 /* WhiteboardPresenter.swift */,
+				582F52852EBBAC38002F6182 /* WhiteboardInteractor.swift */,
+				582F52832EBBAC18002F6182 /* Stroke.swift */,
+			);
+			path = Whiteboard;
+			sourceTree = "<group>";
+		};
+		58C27C3F2EC4D0FC0029AAE9 /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				58C107D72EC234330000406B /* ReferenceView.swift */,
+				58C27C402EC4D14C0029AAE9 /* ReferenceImage.swift */,
+				58C27C462EC4D17E0029AAE9 /* ReferenceRouter.swift */,
+				58C27C422EC4D15F0029AAE9 /* ReferenceInteractor.swift */,
+				58C27C442EC4D16F0029AAE9 /* ReferencePresenter.swift */,
+			);
+			path = Reference;
+			sourceTree = "<group>";
+		};
+		58C27C4B2EC4D1E00029AAE9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				58C107D92EC23D700000406B /* NetworkManage.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		58C27C4C2EC4D28B0029AAE9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				582F52902EBE12D7002F6182 /* Color+Hex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,11 +215,15 @@
 			files = (
 				582F52952EBE2CD7002F6182 /* MovableToolbar.swift in Sources */,
 				58C107DA2EC23D700000406B /* NetworkManage.swift in Sources */,
+				58C27C432EC4D15F0029AAE9 /* ReferenceInteractor.swift in Sources */,
 				58C107D82EC234330000406B /* ReferenceView.swift in Sources */,
 				582F52912EBE12D7002F6182 /* Color+Hex.swift in Sources */,
 				582F52882EBBAC59002F6182 /* WhiteboardPresenter.swift in Sources */,
 				582F52862EBBAC38002F6182 /* WhiteboardInteractor.swift in Sources */,
+				58C27C452EC4D16F0029AAE9 /* ReferencePresenter.swift in Sources */,
+				58C27C472EC4D17E0029AAE9 /* ReferenceRouter.swift in Sources */,
 				582F52842EBBAC18002F6182 /* Stroke.swift in Sources */,
+				58C27C412EC4D14C0029AAE9 /* ReferenceImage.swift in Sources */,
 				582F528A2EBBAC7A002F6182 /* WhiteboardRouter.swift in Sources */,
 				582F528E2EBBADA3002F6182 /* MainApp.swift in Sources */,
 				582F528C2EBBAC9A002F6182 /* WhiteboardView.swift in Sources */,
