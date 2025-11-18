@@ -3,15 +3,15 @@
 //  VIPERWhiteboardApp
 //
 //  Created by next on 05/11/25.
-import Foundation
 import SwiftUI
 import Combine
+import Foundation
 
 enum DrawingTool {
     case pencil
     case eraser
 }
-
+@MainActor
 final class WhiteboardPresenter: ObservableObject {
     @Published private(set) var strokes: [Stroke] = []
     @Published var currentStroke: Stroke = Stroke()
@@ -21,7 +21,7 @@ final class WhiteboardPresenter: ObservableObject {
     @Published var strokeOpacity: Double = 1.0
 
     private var undoneStrokes: [Stroke] = []
-    let interactor: WhiteboardInteractorInput
+    private let interactor: WhiteboardInteractorInput
     private let router: WhiteboardRouter
 
     init(interactor: WhiteboardInteractorInput, router: WhiteboardRouter) {
@@ -30,13 +30,15 @@ final class WhiteboardPresenter: ObservableObject {
         self.strokes = interactor.loadSavedStrokes()
     }
 
-    // MARK: - Drawing Logic
     func startStroke(at location: CGPoint) {
-        let colorHex = (selectedTool == .eraser) ? "FFFFFF" : selectedColor
-        currentStroke = Stroke(points: [StrokePoint(x: location.x, y: location.y)],
-                               colorHex: colorHex,
-                               lineWidth: lineWidth,
-                               opacity: strokeOpacity)
+        let isEraser = selectedTool == .eraser
+        currentStroke = Stroke(
+            points: [StrokePoint(x: location.x, y: location.y)],
+            colorHex: selectedColor,
+            lineWidth: isEraser ? 20 : lineWidth,
+            opacity: strokeOpacity,
+            isEraser: isEraser
+        )
     }
 
     func continueStroke(at location: CGPoint) {
@@ -54,7 +56,6 @@ final class WhiteboardPresenter: ObservableObject {
         currentStroke = Stroke()
     }
 
-    // MARK: - Toolbar Actions
     func clearCanvas() {
         interactor.clearAllStrokes()
         strokes = []
@@ -63,47 +64,34 @@ final class WhiteboardPresenter: ObservableObject {
 
     func setTool(_ tool: DrawingTool) {
         selectedTool = tool
-        if tool == .eraser {
-            lineWidth = 15
-            selectedColor = "FFFFFF"
-        } else {
-            lineWidth = 3
-            if selectedColor.uppercased() == "FFFFFF" {
-                selectedColor = "000000"
-            }
-        }
+        lineWidth = (tool == .eraser) ? 20 : 3
     }
 
     func setColor(_ color: String) {
         selectedColor = color
         if selectedTool == .eraser {
-            selectedTool = .pencil
-            lineWidth = 3
+            setTool(.pencil)
         }
     }
 
-    // MARK: - Navigation
-    func goToReferenceView() -> AnyView {
-        return router.navigateToReferenceView()
-    }
-
-    // MARK: - Undo / Redo
     func undoLastStroke() {
         guard !strokes.isEmpty else { return }
-        let last = strokes.removeLast()
-        undoneStrokes.append(last)
+        undoneStrokes.append(strokes.removeLast())
     }
 
     func redoLastStroke() {
         guard !undoneStrokes.isEmpty else { return }
-        let redoStroke = undoneStrokes.removeLast()
-        strokes.append(redoStroke)
+        strokes.append(undoneStrokes.removeLast())
     }
 
     var canUndo: Bool { !strokes.isEmpty }
     var canRedo: Bool { !undoneStrokes.isEmpty }
 
-    // MARK: - Alert Helpers
+    // Presenter only calls router for navigation
+    func onReferenceButtonTapped() {
+        router.navigateToReferenceView()
+    }
+
     func confirmClearCanvas() -> String {
         "Are you sure you want to clear the canvas? This action cannot be undone."
     }
@@ -117,10 +105,5 @@ final class WhiteboardPresenter: ObservableObject {
         print("✅ Canvas saved")
     }
 }
-
-
-
-
-
 
 

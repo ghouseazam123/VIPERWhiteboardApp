@@ -26,17 +26,12 @@ extension Color {
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
         uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        return (String(format: "%02X%02X%02X", Int(red*255), Int(green*255), Int(blue*255)), Double(alpha))
-    }
-
-    func withOpacity(_ alpha: Double) -> Color {
-        let (hex, _) = self.toHexWithAlpha()
-        return Color(hex: hex, alpha: alpha)
+        return (
+            String(format: "%02X%02X%02X",
+                   Int(red*255), Int(green*255), Int(blue*255)),
+            Double(alpha)
+        )
     }
 }
-
-
-
-
 
 

@@ -3,9 +3,7 @@
 //  VIPERWhiteboardApp
 //
 //  Created by next on 05/11/25.
-//
 
-// VIPERWhiteboardApp.swift
 import SwiftUI
 
 @main
@@ -19,6 +17,8 @@ struct VIPERWhiteboardApp: App {
         }
     }
 }
+
+
 
 
 

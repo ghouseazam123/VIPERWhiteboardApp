@@ -7,49 +7,27 @@ import SwiftUI
 
 struct WhiteboardView: View {
     @ObservedObject var presenter: WhiteboardPresenter
-    @State private var navigateTo: AnyView? = nil
 
     var body: some View {
         NavigationView {
             ZStack {
                 Color.white.ignoresSafeArea()
-
                 GeometryReader { geo in
                     ZStack {
-                        ForEach(presenter.strokes) { stroke in drawStroke(stroke) }
+                        ForEach(presenter.strokes) { stroke in
+                            drawStroke(stroke)
+                        }
                         drawStroke(presenter.currentStroke)
                     }
+                    .compositingGroup()
                     .contentShape(Rectangle())
                     .gesture(drawingGesture(in: geo))
                 }
-                .coordinateSpace(name: "canvas")
 
                 MovableToolbar(presenter: presenter)
-
-                // Reference button
-                VStack {
-                    HStack {
-                        Spacer()
-                        Button(action: { navigateTo = presenter.goToReferenceView() }) {
-                            Image(systemName: "photo.on.rectangle")
-                                .font(.title2)
-                                .padding(10)
-                                .background(Color.black.opacity(0.1))
-                                .clipShape(Circle())
-                        }
-                        .padding(.top, 40)
-                        .padding(.trailing, 20)
-                    }
-                    Spacer()
-                }
-
-                NavigationLink(destination: navigateTo,
-                               isActive: Binding(get: { navigateTo != nil }, set: { if !$0 { navigateTo = nil } })) {
-                    EmptyView()
-                }
             }
             .navigationTitle("Whiteboard")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
     }
 
@@ -63,9 +41,12 @@ struct WhiteboardView: View {
                     presenter.continueStroke(at: loc)
                 }
             }
-            .onEnded { _ in presenter.endStroke() }
+            .onEnded { _ in
+                presenter.endStroke()
+            }
     }
 
+    @ViewBuilder
     private func drawStroke(_ stroke: Stroke) -> some View {
         Path { path in
             guard let first = stroke.points.first else { return }
@@ -74,20 +55,33 @@ struct WhiteboardView: View {
                 path.addLine(to: CGPoint(x: point.x, y: point.y))
             }
         }
-        .stroke(Color(hex: stroke.colorHex).withOpacity(stroke.opacity),
-                style: StrokeStyle(lineWidth: stroke.lineWidth,
-                                   lineCap: .round,
-                                   lineJoin: .round))
+        .stroke(
+            Color(hex: stroke.colorHex)
+                .opacity(stroke.isEraser ? 1.0 : stroke.opacity),
+            style: StrokeStyle(
+                lineWidth: stroke.lineWidth,
+                lineCap: .round,
+                lineJoin: .round
+            )
+        )
+        .blendMode(stroke.isEraser ? .destinationOut : .normal)
     }
 }
 
-// MARK: - Preview
 struct WhiteboardView_Previews: PreviewProvider {
     static var previews: some View {
+        WhiteboardView(presenter: createPresenter())
+    }
+
+    @MainActor
+    static func createPresenter() -> WhiteboardPresenter {
         let interactor = WhiteboardInteractor()
         let router = WhiteboardRouter()
-        let presenter = WhiteboardPresenter(interactor: interactor, router: router)
-        WhiteboardView(presenter: presenter)
+        return WhiteboardPresenter(interactor: interactor, router: router)
     }
 }
+
+
+
+
 

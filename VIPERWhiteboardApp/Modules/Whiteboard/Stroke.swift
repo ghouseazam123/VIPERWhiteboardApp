@@ -3,6 +3,7 @@
 //  VIPERWhiteboardApp
 //
 //  Created by next on 05/11/25.
+
 import Foundation
 import CoreGraphics
 
@@ -17,19 +18,26 @@ struct Stroke: Identifiable, Codable {
     var colorHex: String
     var lineWidth: CGFloat
     var opacity: Double
+    var isEraser: Bool = false
 
     init(id: UUID = UUID(),
          points: [StrokePoint] = [],
          colorHex: String = "000000",
          lineWidth: CGFloat = 3,
-         opacity: Double = 1.0) {
+         opacity: Double = 1.0,
+         isEraser: Bool = false) {
         self.id = id
         self.points = points
         self.colorHex = colorHex
         self.lineWidth = lineWidth
         self.opacity = opacity
+        self.isEraser = isEraser
     }
 }
+
+
+
+
 
 
 
