@@ -1,15 +1,4 @@
 
-## 📸 Screenshots
-
-<p align="center" style="margin:0; padding:0;">
-  <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 50 14"
-       src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-12 at 13.12.19.png"/>
-  <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 49 04"
-       src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-12 at 13.12.33.png"/>
-  <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 49 04"
-       src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-18 at 16.06.11.png"/>
-</p>
-
 # 🧠 VIPER Whiteboard App
 
 An interactive **Whiteboard App** built with **SwiftUI** following the **VIPER architecture**.
@@ -91,7 +80,7 @@ It allows drawing, erasing, color selection, saving strokes, navigation to a ref
   <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 49 04"
        src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-12 at 13.12.33.png"/>
   <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 49 04"
-       src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-12 at 13.12.47.png"/>
+       src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-18 at 16.06.11.png"/>
 </p>
 
 ---
