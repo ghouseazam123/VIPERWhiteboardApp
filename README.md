@@ -7,7 +7,7 @@
   <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 49 04"
        src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-12 at 13.12.33.png"/>
   <img width="250" height="500" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-11-10 at 13 49 04"
-       src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-12 at 13.12.47.png"/>
+       src="VIPERWhiteboardApp/Screenshots/Simulator Screen Shot - iPhone 14 Pro - 2025-11-18 at 16.06.11.png"/>
 </p>
 
 # 🧠 VIPER Whiteboard App
